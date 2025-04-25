@@ -73,13 +73,11 @@
     
 
     // 5. Sort the inventors by years lived
-    
-
     let inventorsSortedByLifespan = inventors.sort((a,b) => {
-      a.age = a.passed - a.year;
-      b.age = b.passed - b.year;
-      return (a.age) - (b.age)
-      
+      // a.age = a.passed - a.year;
+      // b.age = b.passed - b.year;
+      // return (a.age) - (b.age)
+      return ((a.passed - a.year) - (b.passed - b.year))
       
     })
     // console.log(inventorsSortedByLifespan);
@@ -89,11 +87,20 @@
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
 
-    
+
 
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
+    let inventorsByLastName = people.sort((a,b) => {
+      let [aLast, aFirst] = a.split(', ');
+      let [bLast, bFirst] = b.split(', ');
+      return aLast > bLast ? 1 : -1;
+    })
+
+    console.log(inventorsByLastName);
+    
+
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
