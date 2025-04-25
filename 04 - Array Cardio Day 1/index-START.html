@@ -69,13 +69,27 @@
       return total + (currentDude.passed - currentDude.year)
     }, 0)
 
-    console.log(totalAge);
+    // console.log(totalAge);
     
 
     // 5. Sort the inventors by years lived
+    
+
+    let inventorsSortedByLifespan = inventors.sort((a,b) => {
+      a.age = a.passed - a.year;
+      b.age = b.passed - b.year;
+      return (a.age) - (b.age)
+      
+      
+    })
+    // console.log(inventorsSortedByLifespan);
+    
+
 
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+
+    
 
 
     // 7. sort Exercise
